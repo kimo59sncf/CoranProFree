@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "CoranProFree",
+    "slug": "coranprofree",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "coranprofree",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {},
+    "web": {
+      "favicon": "./assets/images/icon.png",
+      "name": "CoranProFree",
+      "shortName": "CoranProFree",
+      "themeColor": "#0B1820",
+      "backgroundColor": "#0B1820",
+      "display": "standalone",
+      "orientation": "portrait",
+      "startUrl": "/",
+      "scope": "/",
+      "bundler": "metro"
+    },
+    "plugins": ["expo-router", ["expo-audio", { "enableBackgroundPlayback": true }]],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

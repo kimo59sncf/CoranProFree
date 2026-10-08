@@ -1,0 +1,293 @@
+
+> @workspace/quran-pro-audio@0.0.0 dev:web C:\Users\7810805F\Documents\DEV-PERSO\CoranProFree\CoranProFree-main\artifacts\quran-pro-audio
+> expo start --web
+
+Starting project at C:\Users\7810805F\Documents\DEV-PERSO\CoranProFree\CoranProFree-main\artifacts\quran-pro-audio
+React Compiler enabled
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+An update for expo is available: 57.0.21 → ~57.0.27
+18 other packages may need updating. Run npx expo install --check for details.
+Logs for your project will appear below.
+Web Bundled 10541ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1677 modules)
+Web Bundled 982ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  ERROR  
+
+Code: MiniPlayer.tsx
+[0m [90m 33 |[39m         [33m<[39m[33m/[39m[33mText[39m[33m>[39m
+ [90m 34 |[39m       [33m<[39m[33m/[39m[33mView[39m[33m>[39m
+[31m[1m>[22m[39m[90m 35 |[39m       [33m<[39m[33mPressable[39m
+ [90m    |[39m       [31m[1m^[22m[39m
+ [90m 36 |[39m         testID[33m=[39m[32m"mini-prev"[39m
+ [90m 37 |[39m         accessibilityLabel[33m=[39m{t([32m'mini.previousAyah'[39m)}
+ [90m 38 |[39m         accessibilityRole[33m=[39m[32m"button"[39m[0m
+Call Stack
+  MiniPlayer (artifacts\quran-pro-audio\components\MiniPlayer.tsx:35:7)
+  HomeScreen (artifacts\quran-pro-audio\app\(tabs)\index.tsx:293:9)
+  ClassicTabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:45:5)
+  TabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:107:10)
+  RootLayoutNav (artifacts\quran-pro-audio\app\_layout.tsx:30:5)
+  RootLayout (artifacts\quran-pro-audio\app\_layout.tsx:68:25)
+Web  ERROR  
+
+Code: MiniPlayer.tsx
+[0m [90m 16 |[39m
+ [90m 17 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 18 |[39m     [33m<[39m[33mPressable[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 19 |[39m       testID[33m=[39m[32m"mini-player"[39m
+ [90m 20 |[39m       onPress[33m=[39m{() [33m=>[39m router[33m.[39mpush([32m'/player'[39m)}
+ [90m 21 |[39m       accessibilityRole[33m=[39m[32m"button"[39m[0m
+Call Stack
+  MiniPlayer (artifacts\quran-pro-audio\components\MiniPlayer.tsx:18:5)
+  HomeScreen (artifacts\quran-pro-audio\app\(tabs)\index.tsx:293:9)
+  ClassicTabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:45:5)
+  TabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:107:10)
+  RootLayoutNav (artifacts\quran-pro-audio\app\_layout.tsx:30:5)
+  RootLayout (artifacts\quran-pro-audio\app\_layout.tsx:68:25)
+Web Bundled 97ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  ERROR  
+
+Code: MiniPlayer.tsx
+[0m [90m 33 |[39m         [33m<[39m[33m/[39m[33mText[39m[33m>[39m
+ [90m 34 |[39m       [33m<[39m[33m/[39m[33mView[39m[33m>[39m
+[31m[1m>[22m[39m[90m 35 |[39m       [33m<[39m[33mPressable[39m
+ [90m    |[39m       [31m[1m^[22m[39m
+ [90m 36 |[39m         testID[33m=[39m[32m"mini-prev"[39m
+ [90m 37 |[39m         accessibilityLabel[33m=[39m{t([32m'mini.previousAyah'[39m)}
+ [90m 38 |[39m         accessibilityRole[33m=[39m[32m"button"[39m[0m
+Call Stack
+  MiniPlayer (artifacts\quran-pro-audio\components\MiniPlayer.tsx:35:7)
+  HomeScreen (artifacts\quran-pro-audio\app\(tabs)\index.tsx:293:9)
+  ClassicTabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:45:5)
+  TabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:107:10)
+  RootLayoutNav (artifacts\quran-pro-audio\app\_layout.tsx:30:5)
+  RootLayout (artifacts\quran-pro-audio\app\_layout.tsx:68:25)
+Web  ERROR  
+
+Code: MiniPlayer.tsx
+[0m [90m 16 |[39m
+ [90m 17 |[39m   [36mreturn[39m (
+[31m[1m>[22m[39m[90m 18 |[39m     [33m<[39m[33mPressable[39m
+ [90m    |[39m     [31m[1m^[22m[39m
+ [90m 19 |[39m       testID[33m=[39m[32m"mini-player"[39m
+ [90m 20 |[39m       onPress[33m=[39m{() [33m=>[39m router[33m.[39mpush([32m'/player'[39m)}
+ [90m 21 |[39m       accessibilityRole[33m=[39m[32m"button"[39m[0m
+Call Stack
+  MiniPlayer (artifacts\quran-pro-audio\components\MiniPlayer.tsx:18:5)
+  HomeScreen (artifacts\quran-pro-audio\app\(tabs)\index.tsx:293:9)
+  ClassicTabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:45:5)
+  TabLayout (artifacts\quran-pro-audio\app\(tabs)\_layout.tsx:107:10)
+  RootLayoutNav (artifacts\quran-pro-audio\app\_layout.tsx:30:5)
+  RootLayout (artifacts\quran-pro-audio\app\_layout.tsx:68:25)
+Web Bundled 93ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web Bundled 88ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+Web  ERROR  In HTML, <button> cannot be a descendant of <button>.
+This will cause a hydration error.
+
+  ...
+    <ZoomTransitionTargetContextProvider route={{name:"index", ...}}>
+      <ZoomTransitionEnabler>
+      <Suspense name="Route(index)" fallback={<SuspenseFallback>}>
+        <WrappedScreenComponent segment="index">
+          <HomeScreen(./(tabs)/index.tsx) segment="index">
+            <View style={[...]}>
+              <div dir={null} ref={function forwardRef} className="css-view-g..." style={{...}}>
+                <FlatList>
+                <View style={[...]}>
+                  <div dir={null} ref={function forwardRef} className="css-view-g..." style={{bottom:"74px"}}>
+                    <MiniPlayer>
+                      <Pressable testID="mini-player" onPress={function t0} accessibilityRole="button" ...>
+                        <View testID="mini-player" accessibilityRole="button" accessibilityLabel="Ouvrir le ..." ...>
+>                         <button
+>                           onKeyDown={function}
+>                           onClick={function onClick}
+>                           onContextMenu={function}
+>                           onBlur={function}
+>                           onFocus={function}
+>                           dir={null}
+>                           ref={function forwardRef}
+>                           aria-label="Ouvrir le lecteur — Al-Fātiḥah"
+>                           role="button"
+>                           tabIndex={0}
+>                           className="css-view-g5y9jx r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awozwy r-b..."
+>                           style={{backgroundColor:"rgba(255,2...",borderTopColor:"rgba(223,2...",borderRightColor:"rgba(223,2...", ...}}
+>                           data-testid="mini-player"
+>                           type="button"
+>                         >
+                            <Artwork>
+                            <View>
+                            <Pressable testID="mini-prev" accessibilityLabel="Verset pré..." accessibilityRole="button" ...>
+                              <View testID="mini-prev" accessibilityLabel="Verset pré..." accessibilityRole="button" ...>
+>                               <button
+>                                 onKeyDown={function}
+>                                 onClick={function onClick}
+>                                 onContextMenu={function}
+>                                 onBlur={function}
+>                                 onFocus={function}
+>                                 dir={null}
+>                                 ref={function forwardRef}
+>                                 aria-label="Verset précédent"
+>                                 role="button"
+>                                 tabIndex={0}
+>                                 className="css-view-g5y9jx r-cursor-1loqt21 r-touchAction-1otgn73 r-alignItems-1awoz..."
+>                                 data-testid="mini-prev"
+>                                 type="button"
+>                               >
+                            ...
+                ...
+ NamelessError@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97769:3
+captureCurrentStack@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97774:12
+addErrorStacks@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97756:21
+console[level]@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97721:58
+consoleErrorMiddleware@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:1487:27
+install/console.error@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:1427:29
+validateDOMNesting@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:7184:370
+completeWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:11875:33
+runWithFiberInDEV@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:6178:127
+completeUnitOfWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14150:19
+performUnitOfWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14088:26
+workLoopSync@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13981:57
+renderRootSync@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13966:9
+performWorkOnRoot@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13603:184
+performWorkOnRootViaSchedulerTask@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14741:24
+performWorkUntilDeadline@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:20680:56
+ 
+button@unknown:0:0
+createElement@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:29180:46
+View<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:29107:38
+Pressable@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:80906:31
+MiniPlayer@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:133233:38
+HomeScreen@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:131696:44
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+BottomTabNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:105433:43
+withLayoutContext/<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64807:41
+Tabs<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:123572:34
+ClassicTabLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:24336:39
+TabLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:24373:37
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+NativeStackNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:118948:43
+withLayoutContext/<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64807:41
+Stack<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64578:34
+RootLayoutNav@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:192634:38
+RootLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:192716:62
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+Content@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121803:43
+ContextNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121776:45
+ExpoRoot@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121710:34
+App@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:23938:39
+WithDevTools@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:100662:45
+Web  ERROR  <button> cannot contain a nested <button>.
+See this log for the ancestor stack trace. NamelessError@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97769:3
+captureCurrentStack@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97774:12
+addErrorStacks@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97756:21
+console[level]@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:97721:58
+consoleErrorMiddleware@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:1487:27
+install/console.error@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:1427:29
+validateDOMNesting/<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:7186:17
+runWithFiberInDEV@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:6178:127
+validateDOMNesting@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:7185:176
+completeWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:11875:33
+runWithFiberInDEV@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:6178:127
+completeUnitOfWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14150:19
+performUnitOfWork@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14088:26
+workLoopSync@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13981:57
+renderRootSync@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13966:9
+performWorkOnRoot@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:13603:184
+performWorkOnRootViaSchedulerTask@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:14741:24
+performWorkUntilDeadline@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:20680:56
+ 
+button@unknown:0:0
+createElement@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:29180:46
+View<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:29107:38
+Pressable@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:80906:31
+MiniPlayer@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:133386:39
+HomeScreen@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:131696:44
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+BottomTabNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:105433:43
+withLayoutContext/<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64807:41
+Tabs<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:123572:34
+ClassicTabLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:24336:39
+TabLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:24373:37
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+NativeStackNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:118948:43
+withLayoutContext/<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64807:41
+Stack<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:64578:34
+RootLayoutNav@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:192634:38
+RootLayout@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:192716:62
+WrappedScreenComponent@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104679:36
+BaseRoute@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:104725:53
+SceneView@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91830:77
+render@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91592:43
+useDescriptors/descriptors<@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91624:29
+useDescriptors@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91621:32
+useNavigationBuilder@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:91191:45
+Content@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121803:43
+ContextNavigator@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121776:45
+ExpoRoot@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:121710:34
+App@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:23938:39
+WithDevTools@http://localhost:8081/artifacts/quran-pro-audio/node_modules/expo-router/entry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable:100662:45
+Web Bundled 81ms node_modules\.pnpm\expo-router@57.0.20_z66wtkvcrb3gy2pellerqy3ofe\node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
