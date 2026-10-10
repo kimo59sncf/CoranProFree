@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ActivityIndicator, LayoutChangeEvent, Pressable, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, LayoutChangeEvent, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -20,6 +20,8 @@ const formatTime = (seconds: number) => {
   const remainder = Math.floor(seconds % 60).toString().padStart(2, '0');
   return `${minutes}:${remainder}`;
 };
+
+const SLEEP_OPTIONS = [5, 10, 15, 30, 45, 60];
 
 export default function PlayerScreen() {
   const colors = useColors();
@@ -64,6 +66,7 @@ export default function PlayerScreen() {
     downloadSurah,
   } = useAudio();
   const [showOptions, setShowOptions] = useState(false);
+  const [sleepModalVisible, setSleepModalVisible] = useState(false);
   const [waveformWidth, setWaveformWidth] = useState(1);
   const ayahs = useMemo(() => getAyahs(currentSurah.id), [currentSurah.id]);
   const activeAyah = Math.min(ayahs.length, Math.max(1, currentAyah));
@@ -75,7 +78,6 @@ export default function PlayerScreen() {
   const isDownloaded = downloadRecord?.status === 'complete';
 
   const setTimer = () => setSleepTimer(sleepTimerMinutes ? null : 15);
-
   const onWaveformLayout = (event: LayoutChangeEvent) => setWaveformWidth(event.nativeEvent.layout.width);
   const onSeek = (locationX: number) => seekProgress(Math.max(0, Math.min(1, locationX / waveformWidth)));
 
@@ -134,8 +136,8 @@ export default function PlayerScreen() {
             <Text style={[styles.chapterMeta, { color: colors.mutedForeground }]}>{chapterDetails}</Text>
           </View>
           <View style={styles.titleActions}>
-            <Pressable accessibilityLabel={favorite ? 'Remove favorite' : 'Add favorite'} onPress={() => toggleFavorite(currentSurah.id)} hitSlop={10}>
-              <Feather name="heart" size={21} color={favorite ? colors.accent : colors.mutedForeground} />
+            <Pressable accessibilityLabel={favorite ? t('common.removeBookmark') : t('common.bookmark')} onPress={() => toggleFavorite(currentSurah.id)} hitSlop={10}>
+              <Feather name="heart" size={21} color={favorite ? colors.favorite : colors.mutedForeground} />
             </Pressable>
             <Pressable
               accessibilityLabel={isDownloaded ? 'Remove offline audio in Library' : 'Download this surah for offline listening'}
@@ -161,7 +163,7 @@ export default function PlayerScreen() {
             hitSlop={10}
             style={styles.verseAction}
           >
-            <Feather name="bookmark" size={18} color={isAyahBookmarked ? colors.accent : colors.mutedForeground} />
+            <Feather name="heart" size={18} color={isAyahBookmarked ? colors.favorite : colors.mutedForeground} />
           </Pressable>
           <Pressable accessibilityLabel={t('common.share')} onPress={() => { void shareAyah(); }} hitSlop={10} style={styles.verseAction}>
             <Feather name="share-2" size={18} color={colors.mutedForeground} />
@@ -175,7 +177,7 @@ export default function PlayerScreen() {
           <Waveform progress={progress} />
           <Pressable
             testID="seek-track"
-            accessibilityLabel="Seek within this surah"
+            accessibilityLabel={t('player.seek')}
             onPress={(event) => onSeek(event.nativeEvent.locationX)}
             style={styles.seekOverlay}
           />
@@ -213,15 +215,15 @@ export default function PlayerScreen() {
         )}
 
         <View style={styles.controls}>
-          <Pressable accessibilityLabel="Previous surah" onPress={previousSurah} hitSlop={14}>
+          <Pressable accessibilityLabel={t('player.previousSurah')} onPress={previousSurah} hitSlop={14}>
             <Feather name="skip-back" size={23} color={colors.foreground} />
           </Pressable>
-          <Pressable accessibilityLabel="Previous ayah" onPress={() => skipAyah(-1)} hitSlop={12}>
+          <Pressable accessibilityLabel={t('mini.previousAyah')} onPress={() => skipAyah(-1)} hitSlop={12}>
             <Feather name="rewind" size={20} color={colors.mutedForeground} />
           </Pressable>
           <Pressable
             testID="main-play-button"
-            accessibilityLabel={isPlaying ? 'Pause recitation' : 'Play recitation'}
+            accessibilityLabel={isPlaying ? t('player.pauseRecitation') : t('player.playRecitation')}
             accessibilityRole="button"
             onPress={async () => {
               await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
@@ -231,10 +233,10 @@ export default function PlayerScreen() {
           >
             <Feather name={isPlaying ? 'pause' : 'play'} size={26} color={colors.primaryForeground} />
           </Pressable>
-          <Pressable accessibilityLabel="Next ayah" onPress={() => skipAyah(1)} hitSlop={12}>
+          <Pressable accessibilityLabel={t('mini.nextAyah')} onPress={() => skipAyah(1)} hitSlop={12}>
             <Feather name="fast-forward" size={20} color={colors.mutedForeground} />
           </Pressable>
-          <Pressable accessibilityLabel="Next surah" onPress={nextSurah} hitSlop={14}>
+          <Pressable accessibilityLabel={t('player.nextSurah')} onPress={nextSurah} hitSlop={14}>
             <Feather name="skip-forward" size={23} color={colors.foreground} />
           </Pressable>
         </View>
@@ -244,7 +246,7 @@ export default function PlayerScreen() {
             <Feather name="repeat" size={18} color={repeatMode === 'off' ? colors.mutedForeground : colors.accent} />
             <Text style={[styles.toolLabel, { color: repeatMode === 'off' ? colors.mutedForeground : colors.accent }]}>{repeatLabel}</Text>
           </Pressable>
-          <Pressable style={styles.tool} onPress={setTimer}>
+          <Pressable style={styles.tool} onPress={() => setSleepModalVisible(true)}>
             <Feather name="moon" size={18} color={sleepTimerMinutes ? colors.accent : colors.mutedForeground} />
             <Text style={[styles.toolLabel, { color: sleepTimerMinutes ? colors.accent : colors.mutedForeground }]}>{sleepTimerMinutes ? `${sleepTimerMinutes} min` : t('player.sleepTimer')}</Text>
           </Pressable>
@@ -317,6 +319,24 @@ export default function PlayerScreen() {
           ))}
         </View>
       </ScrollView>
+
+      <Modal transparent visible={sleepModalVisible} animationType="fade" onRequestClose={() => setSleepModalVisible(false)}>
+        <View style={styles.sleepBackdrop}>
+          <View style={[styles.sleepCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+            <Text style={[styles.sleepTitle, { color: colors.foreground }]}>{t('player.sleepTimer')}</Text>
+            <View style={styles.sleepOptions}>
+              {SLEEP_OPTIONS.map((minutes) => (
+                <Pressable key={minutes} onPress={() => { setSleepTimer(minutes); setSleepModalVisible(false); }} style={[styles.sleepOption, { backgroundColor: sleepTimerMinutes === minutes ? colors.primary : colors.secondary }]}>
+                  <Text style={[styles.sleepOptionText, { color: sleepTimerMinutes === minutes ? colors.primaryForeground : colors.secondaryForeground }]}>{minutes} min</Text>
+                </Pressable>
+              ))}
+            </View>
+            <Pressable onPress={() => { setSleepTimer(null); setSleepModalVisible(false); }} style={[styles.sleepOff, { backgroundColor: colors.destructive }]}>
+              <Text style={[styles.sleepOffText, { color: colors.destructiveForeground }]}>{t('player.sleepOff')}</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -347,6 +367,14 @@ const styles = StyleSheet.create({
   rangeHint: { fontSize: 11, marginTop: 2 },
   verseActions: { flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 8 },
   verseAction: { padding: 6 },
+  sleepBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.58)', justifyContent: 'center', padding: 24 },
+  sleepCard: { borderWidth: 1, borderRadius: 22, padding: 18 },
+  sleepTitle: { fontSize: 18, fontWeight: '600', marginBottom: 14 },
+  sleepOptions: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 14 },
+  sleepOption: { borderRadius: 10, paddingVertical: 9, paddingHorizontal: 14 },
+  sleepOptionText: { fontSize: 12, fontWeight: '600' },
+  sleepOff: { borderRadius: 12, paddingVertical: 11, alignItems: 'center' },
+  sleepOffText: { fontSize: 13, fontWeight: '600' },
   controls: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 21 },
   mainPlay: { width: 62, height: 62, borderRadius: 31, alignItems: 'center', justifyContent: 'center' },
   toolRow: { flexDirection: 'row', justifyContent: 'space-around', borderTopWidth: 1, borderBottomWidth: 1, marginTop: 27, paddingVertical: 17 },

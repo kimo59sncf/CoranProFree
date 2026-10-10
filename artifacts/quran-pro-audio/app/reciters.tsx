@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -59,7 +59,11 @@ export default function RecitersScreen() {
                 style={({ pressed }) => [styles.cardMain, { opacity: pressed ? 0.9 : 1 }]}
               >
                 <View style={[styles.avatar, { backgroundColor: item.color }]}>
-                  <Text style={styles.avatarText}>{item.initials}</Text>
+                  {item.image ? (
+                    <Image source={{ uri: item.image }} style={StyleSheet.absoluteFill} resizeMode="cover" accessible={false} />
+                  ) : (
+                    <Text style={styles.avatarText}>{item.initials}</Text>
+                  )}
                 </View>
                 <View style={styles.copy}>
                   <View style={styles.nameRow}>

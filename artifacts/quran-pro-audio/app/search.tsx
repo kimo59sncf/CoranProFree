@@ -104,7 +104,7 @@ export default function SearchScreen() {
               <View style={styles.resultHeader}>
                 <Text style={[styles.resultSurah, { color: colors.foreground }]}>{item.surahTransliteration}</Text>
                 <Text style={[styles.resultRef, { color: colors.accent }]}>
-                  {item.type === 'surah' ? `Sourate ${item.surahId}` : `Sourate ${item.surahId} · Verset ${item.ayahId}`}
+                  {item.type === 'surah' ? `${t('common.surah')} ${item.surahId}` : `${t('common.surah')} ${item.surahId} · ${t('common.ayah')} ${item.ayahId}`}
                 </Text>
               </View>
               <Text style={[styles.resultArabic, { color: colors.foreground }]} numberOfLines={2}>

@@ -46,6 +46,19 @@ const colors = {
     destructive: '#C0392B',
     destructiveForeground: '#FFFFFF',
 
+    // Favorites (heart) — modern red
+    favorite: '#E5484D',
+    favoriteForeground: '#FFFFFF',
+
+    // Success (downloaded, completed) — green
+    success: '#16A34A',
+
+    // Warning (downloading, pending) — amber/orange
+    warning: '#D97706',
+
+    // Disabled — gray
+    disabled: '#9CA3AF',
+
     // Borders and input outlines
     border: '#DFE5DE',
     input: '#C8D2C9',
@@ -68,6 +81,20 @@ const colors = {
     accentForeground: '#0B1820',
     destructive: '#D96B67',
     destructiveForeground: '#FFFFFF',
+
+    // Favorites (heart) — modern red
+    favorite: '#F87171',
+    favoriteForeground: '#0B1820',
+
+    // Success (downloaded, completed) — green
+    success: '#22C55E',
+
+    // Warning (downloading, pending) — amber/orange
+    warning: '#F59E0B',
+
+    // Disabled — gray
+    disabled: '#6B7280',
+
     border: '#26434A',
     input: '#2D5056',
   },

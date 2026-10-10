@@ -175,11 +175,12 @@ export default function LibraryScreen() {
         <Pressable onPress={() => void openSurah(item)} style={styles.rowMain}>
           <Artwork kind={item.cover} size={48} />
           <View style={styles.rowCopy}>
+            <Text style={[styles.rowArabic, { color: colors.foreground }]}>{item.arabic}</Text>
             <Text style={[styles.rowTitle, { color: colors.foreground }]} numberOfLines={1}>
               {item.transliteration}
             </Text>
             <Text style={[styles.rowSubtitle, { color: colors.mutedForeground }]} numberOfLines={1}>
-              {item.translation} · {item.ayahCount} ayahs
+              {language === 'en' ? item.translation : t(item.revelation === 'Meccan' ? 'surah.meccan' : 'surah.medinan')}
             </Text>
             {!!record && !isComplete && (
               <Text style={[styles.downloadState, { color: record.status === 'error' ? colors.destructive : colors.primary }]}>
@@ -197,17 +198,17 @@ export default function LibraryScreen() {
         </Pressable>
         <View style={styles.rowActions}>
           <Pressable
-            accessibilityLabel={isFavorite ? 'Remove favorite' : 'Add favorite'}
+            accessibilityLabel={isFavorite ? t('common.removeBookmark') : t('common.bookmark')}
             testID={`favorite-surah-${item.id}`}
             onPress={() => toggleFavorite(item.id)}
             hitSlop={8}
             style={styles.action}
           >
-            <Feather name={isFavorite ? 'heart' : 'heart'} size={17} color={isFavorite ? colors.accent : colors.mutedForeground} />
+            <Feather name={isFavorite ? 'heart' : 'heart'} size={17} color={isFavorite ? colors.favorite : colors.mutedForeground} />
           </Pressable>
           {filter === 'playlists' && activePlaylist ? (
             <Pressable
-              accessibilityLabel="Remove from playlist"
+              accessibilityLabel={t('common.removeFromPlaylist')}
               testID={`remove-playlist-surah-${item.id}`}
               onPress={() => toggleSurahInPlaylist(activePlaylist.id, item.id)}
               hitSlop={8}
@@ -217,7 +218,7 @@ export default function LibraryScreen() {
             </Pressable>
           ) : filter !== 'offline' ? (
             <Pressable
-              accessibilityLabel="Add to playlist"
+              accessibilityLabel={t('common.addToPlaylist')}
               testID={`add-playlist-surah-${item.id}`}
               onPress={() => openPlaylistPicker(item.id)}
               hitSlop={8}
@@ -309,7 +310,7 @@ export default function LibraryScreen() {
             {completedDownloads.length > 0 && (
               <Pressable onPress={() => setClearConfirmVisible(true)} style={[styles.clearAllButton, { borderColor: colors.border }]}>
                 <Feather name="trash-2" size={14} color={colors.destructive} />
-                <Text style={[styles.clearAllText, { color: colors.destructive }]}>Tout supprimer</Text>
+                <Text style={[styles.clearAllText, { color: colors.destructive }]}>{t('library.clearAll')}</Text>
               </Pressable>
             )}
             {!!downloadError && (
@@ -410,7 +411,7 @@ export default function LibraryScreen() {
               <TextInput
                 value={query}
                 onChangeText={setQuery}
-                placeholder="Search surahs"
+                placeholder={t('common.searchSurahs')}
                 placeholderTextColor={colors.mutedForeground}
                 style={[styles.searchInput, { color: colors.foreground }]}
                 returnKeyType="search"
@@ -443,7 +444,7 @@ export default function LibraryScreen() {
             </Text>
             {filter === 'playlists' && playlists.length === 0 && (
               <Pressable onPress={() => setCreateModalVisible(true)} style={[styles.emptyButton, { backgroundColor: colors.primary }]}>
-                <Text style={[styles.emptyButtonText, { color: colors.primaryForeground }]}>Create a playlist</Text>
+                <Text style={[styles.emptyButtonText, { color: colors.primaryForeground }]}>{t('menu.createPlaylist')}</Text>
               </Pressable>
             )}
           </View>
@@ -522,10 +523,10 @@ export default function LibraryScreen() {
             <Text style={[styles.modalDescription, { color: colors.mutedForeground }]}>Cette action supprimera l'audio hors ligne de cet appareil. Elle est irréversible.</Text>
             <View style={styles.modalActions}>
               <Pressable onPress={() => setClearConfirmVisible(false)} style={[styles.modalButton, { backgroundColor: colors.secondary }]}>
-                <Text style={[styles.modalButtonText, { color: colors.secondaryForeground }]}>Annuler</Text>
+                <Text style={[styles.modalButtonText, { color: colors.secondaryForeground }]}>{t('common.cancel')}</Text>
               </Pressable>
               <Pressable onPress={() => { setClearConfirmVisible(false); void removeAllDownloads(); }} style={[styles.modalButton, { backgroundColor: colors.destructive }]}>
-                <Text style={[styles.modalButtonText, { color: colors.destructiveForeground }]}>Supprimer</Text>
+                <Text style={[styles.modalButtonText, { color: colors.destructiveForeground }]}>{t('common.delete')}</Text>
               </Pressable>
             </View>
           </View>
@@ -576,6 +577,7 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', borderBottomWidth: 1, paddingVertical: 10, gap: 8 },
   rowMain: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 11 },
   rowCopy: { flex: 1, gap: 4 },
+  rowArabic: { fontSize: 17, textAlign: 'right', lineHeight: 24 },
   rowTitle: { fontSize: 14, fontWeight: '600' },
   rowSubtitle: { fontSize: 10 },
   downloadState: { fontSize: 9, lineHeight: 13 },

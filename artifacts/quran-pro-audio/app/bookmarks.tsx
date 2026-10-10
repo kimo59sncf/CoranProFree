@@ -53,8 +53,8 @@ export default function BookmarksScreen() {
             <View style={[styles.card, { backgroundColor: colors.card, borderColor: colors.border }]}>
               <Pressable onPress={() => open(item.surahId, item.ayahId)} style={styles.cardMain}>
                 <View style={styles.cardHeader}>
-                  <Text style={[styles.surahName, { color: colors.foreground }]}>{surah?.transliteration ?? `Sourate ${item.surahId}`}</Text>
-                  <Text style={[styles.ref, { color: colors.accent }]}>Verset {item.ayahId}</Text>
+                  <Text style={[styles.surahName, { color: colors.foreground }]}>{surah?.transliteration ?? `${t('common.surah')} ${item.surahId}`}</Text>
+                  <Text style={[styles.ref, { color: colors.accent }]}>{t('common.ayah')} {item.ayahId}</Text>
                 </View>
                 <Text style={[styles.arabic, { color: colors.foreground }]} numberOfLines={3}>{ayahText}</Text>
               </Pressable>

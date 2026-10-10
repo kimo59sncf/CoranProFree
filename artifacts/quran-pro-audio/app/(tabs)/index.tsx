@@ -23,22 +23,22 @@ import { useAudio } from '@/context/AudioContext';
 import { useColors } from '@/hooks/useColors';
 import { useLanguage } from '@/context/LanguageContext';
 import { useProgress } from '@/context/ProgressContext';
+import { formatDate } from '@/lib/text';
 
 export default function HomeScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { t, language } = useLanguage();
-  const dateLabel = new Date().toLocaleDateString(
-    language === 'fr' ? 'fr-FR' : language === 'ar' ? 'ar' : 'en-US',
-    { weekday: 'long', day: 'numeric', month: 'short' },
-  );
+  const dateLabel = formatDate(new Date(), language);
   const { streak, listeningMs, versesRead } = useProgress();
   const {
     currentSurah,
     currentAyah,
+    reciter,
     hasActiveAudio,
     selectSurah,
+    playRandomSurah,
     isPlaying,
     favoriteIds,
     toggleFavorite,
@@ -68,6 +68,12 @@ export default function HomeScreen() {
   const openSurah = async (surah = featured) => {
     await Haptics.selectionAsync();
     selectSurah(surah);
+    router.push('/player');
+  };
+
+  const openRandomSurah = async () => {
+    await Haptics.selectionAsync();
+    playRandomSurah();
     router.push('/player');
   };
 
@@ -158,7 +164,7 @@ export default function HomeScreen() {
           <View>
             <View style={styles.header}>
               <View>
-                <Text style={[styles.eyebrow, { color: colors.accent }]}>{dateLabel.toUpperCase()}</Text>
+                <Text style={[styles.eyebrow, { color: colors.accent }]}>{dateLabel}</Text>
                 <Text style={[styles.greeting, { color: colors.foreground }]}>{t('home.greeting')}</Text>
               </View>
               <View style={styles.headerActions}>
@@ -232,10 +238,10 @@ export default function HomeScreen() {
                 <View style={styles.featuredCopy}>
                   <View style={[styles.pill, { backgroundColor: colors.secondary }]}>
                     <View style={[styles.dot, { backgroundColor: colors.accent }]} />
-                    <Text style={[styles.pillText, { color: colors.secondaryForeground }]}>MISHARY ALAFASY</Text>
+                    <Text style={[styles.pillText, { color: colors.secondaryForeground }]}>{reciter.name.toUpperCase()}</Text>
                   </View>
                   <Text style={[styles.featuredTitle, { color: colors.foreground }]}>{featured.transliteration}</Text>
-                  <Text style={[styles.featuredSubtitle, { color: colors.mutedForeground }]}>{featured.translation}</Text>
+                  <Text style={[styles.featuredSubtitle, { color: colors.mutedForeground }]}>{language === 'en' ? featured.translation : t(featured.revelation === 'Meccan' ? 'surah.meccan' : 'surah.medinan')}</Text>
                   <View style={styles.featuredBottom}>
                     <Text style={[styles.duration, { color: colors.mutedForeground }]}>{featured.verses} ayahs</Text>
                     <View style={[styles.circlePlay, { backgroundColor: colors.primary }]}>
@@ -248,9 +254,15 @@ export default function HomeScreen() {
 
             <View style={styles.sectionHeader}>
               <Text style={[styles.sectionLabel, { color: colors.foreground }]}>{t('home.explore')}</Text>
-              <Pressable onPress={() => router.push('/library')} hitSlop={10}>
-                <Text style={[styles.seeAll, { color: colors.primary }]}>{t('common.seeAll')}</Text>
-              </Pressable>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Pressable onPress={() => void openRandomSurah()} hitSlop={10} accessibilityRole="button" accessibilityLabel={t('home.surprise')} style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+                  <Feather name="shuffle" size={15} color={colors.primary} />
+                  <Text style={[styles.seeAll, { color: colors.primary }]}>{t('home.surprise')}</Text>
+                </Pressable>
+                <Pressable onPress={() => router.push('/library')} hitSlop={10}>
+                  <Text style={[styles.seeAll, { color: colors.primary }]}>{t('common.seeAll')}</Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         }
@@ -271,14 +283,15 @@ export default function HomeScreen() {
               <Text style={[styles.number, { color: colors.accent }]}>{String(item.id).padStart(3, '0')}</Text>
               <Artwork kind={item.cover} size={52} />
               <View style={styles.rowCopy}>
+                <Text style={[styles.rowArabic, { color: colors.foreground }]}>{item.arabic}</Text>
                 <Text style={[styles.rowTitle, { color: colors.foreground }]}>{item.transliteration}</Text>
-                <Text style={[styles.rowSubtitle, { color: colors.mutedForeground }]}>{item.translation} · {item.verses} ayahs</Text>
+                <Text style={[styles.rowSubtitle, { color: colors.mutedForeground }]}>{language === 'en' ? item.translation : t(item.revelation === 'Meccan' ? 'surah.meccan' : 'surah.medinan')}</Text>
               </View>
             </Pressable>
             <Pressable
               testID={`surah-actions-${item.id}`}
               accessibilityRole="button"
-              accessibilityLabel={`Actions for ${item.transliteration}`}
+              accessibilityLabel={`${t('menu.actionsFor')} ${item.transliteration}`}
               onPress={() => openSurahMenu(item)}
               style={({ pressed }) => [styles.rowActions, { opacity: pressed ? 0.6 : 1 }]}
             >
@@ -312,9 +325,9 @@ export default function HomeScreen() {
                       {t('common.surah').toUpperCase()} {String(menuSurah.id).padStart(3, '0')}
                     </Text>
                     <Text style={[styles.menuTitle, { color: colors.foreground }]}>{menuSurah.transliteration}</Text>
-                    <Text style={[styles.menuSubtitle, { color: colors.mutedForeground }]}>{menuSurah.translation}</Text>
+                    <Text style={[styles.menuSubtitle, { color: colors.mutedForeground }]}>{language === 'en' ? menuSurah.translation : t(menuSurah.revelation === 'Meccan' ? 'surah.meccan' : 'surah.medinan')}</Text>
                   </View>
-                  <Pressable testID="close-surah-actions" onPress={closeSurahMenu} hitSlop={12} accessibilityLabel="Close surah actions">
+                  <Pressable testID="close-surah-actions" onPress={closeSurahMenu} hitSlop={12} accessibilityLabel={t('menu.closeActions')}>
                     <Feather name="x" size={22} color={colors.mutedForeground} />
                   </Pressable>
                 </View>
@@ -326,9 +339,9 @@ export default function HomeScreen() {
                       style={styles.menuAction}
                       onPress={() => toggleFavorite(menuSurah.id)}
                     >
-                      <Feather name="heart" size={19} color={isFavorite ? colors.primary : colors.foreground} />
+                      <Feather name="heart" size={19} color={isFavorite ? colors.favorite : colors.foreground} />
                       <Text style={[styles.menuActionText, { color: colors.foreground }]}>
-                        {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+                        {isFavorite ? t('common.removeBookmark') : t('common.bookmark')}
                       </Text>
                     </Pressable>
 
@@ -338,7 +351,7 @@ export default function HomeScreen() {
                       onPress={() => { setMenuError(null); setMenuMode('playlists'); }}
                     >
                       <Feather name="list" size={19} color={colors.foreground} />
-                      <Text style={[styles.menuActionText, { color: colors.foreground }]}>Add to a playlist</Text>
+                      <Text style={[styles.menuActionText, { color: colors.foreground }]}>{t('playlist.addTo')}</Text>
                     </Pressable>
 
                     <Pressable
@@ -352,16 +365,16 @@ export default function HomeScreen() {
                       <View style={styles.menuActionCopy}>
                         <Text style={[styles.menuActionText, { color: colors.foreground }]}>
                           {selectedDownload?.status === 'complete'
-                            ? 'Remove offline audio'
+                            ? t('menu.removeOffline')
                             : selectedDownload?.status === 'downloading'
-                              ? 'Pause download'
+                              ? t('menu.pauseDownload')
                               : selectedDownload?.status === 'paused'
-                                ? 'Resume download'
-                                : 'Download offline'}
+                                ? t('menu.resumeDownload')
+                                : t('menu.downloadOffline')}
                         </Text>
                         {selectedDownload?.status === 'downloading' && (
                           <Text style={[styles.menuHint, { color: colors.mutedForeground }]}>
-                            {selectedDownload.downloadedAyahs} / {menuSurah.ayahCount} ayahs
+                            {selectedDownload.downloadedAyahs} / {menuSurah.ayahCount}
                           </Text>
                         )}
                       </View>
@@ -369,7 +382,7 @@ export default function HomeScreen() {
 
                     {selectedDownload?.status === 'error' && (
                       <Text style={[styles.menuError, { color: colors.destructive }]}>
-                        {selectedDownload.error ?? 'Download failed. Tap to retry.'}
+                        {selectedDownload.error ?? t('common.downloadError')}
                       </Text>
                     )}
                     {menuError && <Text style={[styles.menuError, { color: colors.destructive }]}>{menuError}</Text>}
@@ -378,9 +391,9 @@ export default function HomeScreen() {
 
                 {menuMode === 'playlists' && (
                   <View style={styles.menuOptions}>
-                    <Text style={[styles.menuSectionTitle, { color: colors.foreground }]}>Choose playlists</Text>
+                    <Text style={[styles.menuSectionTitle, { color: colors.foreground }]}>{t('menu.choosePlaylists')}</Text>
                     {playlists.length === 0 ? (
-                      <Text style={[styles.menuHint, { color: colors.mutedForeground }]}>No playlists yet. Create one to add this surah.</Text>
+                      <Text style={[styles.menuHint, { color: colors.mutedForeground }]}>{t('menu.noPlaylists')}</Text>
                     ) : (
                       <ScrollView style={styles.playlistList} showsVerticalScrollIndicator={false}>
                         {playlists.map((playlist) => {
@@ -401,22 +414,22 @@ export default function HomeScreen() {
                     )}
                     <Pressable testID="create-playlist-from-surah" style={styles.menuAction} onPress={() => { setMenuError(null); setMenuMode('create'); }}>
                       <Feather name="plus-circle" size={19} color={colors.primary} />
-                      <Text style={[styles.menuActionText, { color: colors.primary }]}>Create a playlist</Text>
+                      <Text style={[styles.menuActionText, { color: colors.primary }]}>{t('menu.createPlaylist')}</Text>
                     </Pressable>
                     <Pressable style={[styles.menuDone, { backgroundColor: colors.primary }]} onPress={() => setMenuMode('actions')}>
-                      <Text style={[styles.menuDoneText, { color: colors.primaryForeground }]}>Done</Text>
+                      <Text style={[styles.menuDoneText, { color: colors.primaryForeground }]}>{t('common.done')}</Text>
                     </Pressable>
                   </View>
                 )}
 
                 {menuMode === 'create' && (
                   <View style={styles.menuOptions}>
-                    <Text style={[styles.menuSectionTitle, { color: colors.foreground }]}>New playlist</Text>
+                    <Text style={[styles.menuSectionTitle, { color: colors.foreground }]}>{t('playlist.new')}</Text>
                     <TextInput
                       testID="new-playlist-name"
                       value={newPlaylistName}
                       onChangeText={setNewPlaylistName}
-                      placeholder="Playlist name"
+                      placeholder={t('common.playlistName')}
                       placeholderTextColor={colors.mutedForeground}
                       returnKeyType="done"
                       onSubmitEditing={() => { void createPlaylistForSurah(); }}
@@ -490,6 +503,7 @@ const styles = StyleSheet.create({
   rowActions: { width: 42, alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch' },
   number: { width: 29, fontSize: 11, fontWeight: '600', letterSpacing: 0.5 },
   rowCopy: { flex: 1, gap: 4 },
+  rowArabic: { fontSize: 18, textAlign: 'right', lineHeight: 26 },
   rowTitle: { fontSize: 15, fontWeight: '600' },
   rowSubtitle: { fontSize: 11 },
   footer: { alignItems: 'center', paddingTop: 38, paddingBottom: 12, gap: 8 },

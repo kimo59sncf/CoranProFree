@@ -60,10 +60,12 @@ export function SurahDownloadButton({
           size={21}
           color={
             isComplete
-              ? colors.primary
+              ? colors.success
               : download?.status === 'error'
                 ? colors.destructive
-                : colors.mutedForeground
+                : download?.status === 'downloading'
+                  ? colors.warning
+                  : colors.mutedForeground
           }
         />
       )}

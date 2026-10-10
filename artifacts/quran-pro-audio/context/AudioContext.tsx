@@ -51,6 +51,7 @@ type AudioContextValue = {
   skipAyah: (direction: -1 | 1) => void;
   selectSurah: (surah: Surah) => void;
   selectSurahAt: (surah: Surah, ayahId: number) => void;
+  playRandomSurah: () => void;
   nextSurah: () => void;
   previousSurah: () => void;
   setSpeed: (speed: number) => void;
@@ -505,6 +506,11 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     void playSurahs([surah], true, true);
   }, [playSurahs]);
 
+  const playRandomSurah = useCallback(() => {
+    const random = surahs[Math.floor(Math.random() * surahs.length)];
+    if (random) selectSurah(random);
+  }, [selectSurah]);
+
   const selectSurahAt = useCallback((surah: Surah, ayahId: number) => {
     rangeStartRef.current = 1;
     rangeEndRef.current = surah.ayahCount;
@@ -681,6 +687,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     },
     selectSurah,
     selectSurahAt,
+    playRandomSurah,
     nextSurah: () => stepSurah(1),
     previousSurah: () => stepSurah(-1),
     setSpeed: (nextSpeed) => {

@@ -32,3 +32,13 @@ export function computeStreak(activeDates: string[]): number {
   }
   return streak;
 }
+
+/**
+ * Formate une date selon la langue (FR/EN/AR) avec le jour complet + mois complet.
+ * Ex. : fr « Jeudi 8 octobre », en « Thursday, October 8 », ar « الخميس، ٨ أكتوبر ».
+ */
+export function formatDate(date: Date, language: string): string {
+  const locale = language === 'fr' ? 'fr-FR' : language === 'ar' ? 'ar' : 'en-US';
+  const formatted = date.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long' });
+  return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+}

@@ -129,40 +129,22 @@ export const surahs: Surah[] = quranText.map((surah) => ({
  */
 export const DEFAULT_RECITER_ID = 'alafasy';
 
+// Portraits des récitateurs (source : assabile.com — réutilisation à confirmer
+// avant diffusion). Fallback : initiales affichées si l'image est indisponible.
+const portrait = (id: number) => `https://www.assabile.com/media/portraits/${id}-200.webp`;
+
 export const reciters: Reciter[] = [
-  {
-    id: 'alafasy',
-    name: 'Mishary Alafasy',
-    arabicName: 'مشاري راشد العفاسي',
-    language: 'Arabe',
-    style: 'Murattal',
-    initials: 'MA',
-    color: '#6E9B8A',
-    audioSource: 'https://everyayah.com/data/Alafasy_128kbps/{surah}{ayah}.mp3',
-    enabled: true,
-  },
-  {
-    id: 'sudais',
-    name: 'Abdul Rahman Al-Sudais',
-    arabicName: 'عبد الرحمن السديس',
-    language: 'Arabe',
-    style: 'Tajweed',
-    initials: 'AS',
-    color: '#B88F5A',
-    audioSource: null,
-    enabled: false,
-  },
-  {
-    id: 'minshawi',
-    name: 'Mohamed Siddiq Al-Minshawi',
-    arabicName: 'محمد صديق المنشاوي',
-    language: 'Arabe',
-    style: 'Murattal',
-    initials: 'MM',
-    color: '#778DA3',
-    audioSource: null,
-    enabled: false,
-  },
+  { id: 'alafasy', name: 'Mishary Alafasy', arabicName: 'مشاري راشد العفاسي', language: 'Arabe', style: 'Murattal', initials: 'MA', color: '#6E9B8A', image: portrait(1), audioSource: 'https://everyayah.com/data/Alafasy_128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'husary', name: 'Mahmoud Khalil Al-Husary', arabicName: 'محمود خليل الحصري', language: 'Arabe', style: 'Murattal', initials: 'MH', color: '#8A6E9B', image: portrait(27), audioSource: 'https://everyayah.com/data/Husary_128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'minshawi', name: 'Mohamed Siddiq Al-Minshawi', arabicName: 'محمد صديق المنشاوي', language: 'Arabe', style: 'Murattal', initials: 'MM', color: '#778DA3', image: portrait(3), audioSource: 'https://everyayah.com/data/Minshawy_Murattal_128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'abdulbasit', name: 'Abdul Basit (Murattal)', arabicName: 'عبد الباسط عبد الصمد', language: 'Arabe', style: 'Murattal', initials: 'AB', color: '#B86E6E', image: portrait(2), audioSource: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'sudais', name: 'Abdul Rahman Al-Sudais', arabicName: 'عبد الرحمن السديس', language: 'Arabe', style: 'Tajweed', initials: 'AS', color: '#B88F5A', image: portrait(12), audioSource: 'https://everyayah.com/data/Abdurrahmaan_As-Sudais_192kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'muaiqly', name: 'Maher Al-Muaiqly', arabicName: 'ماهر المعيقلي', language: 'Arabe', style: 'Murattal', initials: 'MU', color: '#5A8F6E', image: portrait(33), audioSource: 'https://everyayah.com/data/MaherAlMuaiqly128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'shuraym', name: 'Saud Ash-Shuraim', arabicName: 'سعود الشريم', language: 'Arabe', style: 'Murattal', initials: 'SS', color: '#6E8F5A', image: portrait(11), audioSource: 'https://everyayah.com/data/Saood_ash-Shuraym_128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'ajamy', name: 'Ahmed Al-Ajmy', arabicName: 'أحمد العجمي', language: 'Arabe', style: 'Murattal', initials: 'AA', color: '#5A6E8F', image: portrait(13), audioSource: 'https://everyayah.com/data/Ahmed_ibn_Ali_al-Ajamy_64kbps_QuranExplorer.Com/{surah}{ayah}.mp3', enabled: true },
+  { id: 'basfar', name: 'Abdullah Basfar', arabicName: 'عبد الله بصفر', language: 'Arabe', style: 'Murattal', initials: 'AB', color: '#8F5A6E', image: portrait(6), audioSource: 'https://everyayah.com/data/Abdullah_Basfar_192kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'ayyoub', name: 'Muhammad Ayyoub', arabicName: 'محمد أيوب', language: 'Arabe', style: 'Murattal', initials: 'MA', color: '#5A8F8F', image: portrait(14), audioSource: 'https://everyayah.com/data/Muhammad_Ayyoub_128kbps/{surah}{ayah}.mp3', enabled: true },
+  { id: 'jibreel', name: 'Muhammad Jibreel', arabicName: 'محمد جبريل', language: 'Arabe', style: 'Murattal', initials: 'MJ', color: '#8F8F5A', image: portrait(59), audioSource: 'https://everyayah.com/data/Muhammad_Jibreel_64kbps/{surah}{ayah}.mp3', enabled: true },
 ];
 
 export const getReciter = (id: string): Reciter | undefined =>
